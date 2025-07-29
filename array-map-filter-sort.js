@@ -11,10 +11,10 @@ let mapAges = ages.map((age) => {
 console.log("mapAges", mapAges);
 
 let data = [
-  { name: "boldo", age: 20, grade: 11, gender: "male" },
-  { name: "dorjo", age: 20, grade: 11, gender: "male" },
-  { name: "tsetsge", age: 20, grade: 11, gender: "female" },
-  { name: "dulma", age: 15, grade: 11, gender: "female" },
+  { name: "boldo", age: 18, grade: 11, gender: "male", balance: 3000 },
+  { name: "dorjo", age: 21, grade: 11, gender: "male", balance: 2000 },
+  { name: "tsetsge", age: 20, grade: 11, gender: "female", balance: 1000 },
+  { name: "dulma", age: 15, grade: 11, gender: "female", balance: 3500 },
 ];
 
 let newStudents = data.map((student) => {
@@ -63,16 +63,40 @@ console.log("filteredByGender=", resultByGender);
 // nasaar n sortloh function bich
 
 const sortByAge = (arr) => {
-  arr.sort((student2, student1) => {
-    if (student2.name > student1.name) {
+  let sortedByAge = arr.sort((student2, student1) => {
+    if (student2.age > student1.age) {
       return -1;
     } else {
       return 1;
     }
   });
+  return sortedByAge;
 };
+let resultSortByAge = sortByAge(data);
+console.log("sortByAge=", resultSortByAge);
 
 // neg too ogonguut tuhain toonoos ih balanactei surgchdiig yalgaj ogoh function bich
+
+const findRichStudents = (arr, balance) => {
+  let richStudents = arr.filter((student) => {
+    return student.balance > balance;
+  });
+  return richStudents;
+};
+let resultRichStudent = findRichStudents(data, 2100);
+console.log("richStudents=", resultRichStudent);
+
 // classCode gesen field nemeh function bich
 // eg: addClassCodeToStudents(students,"3A") => [{name: "boldo",age: 3,grade: 11,gender: "male",balance: 1231,classCode:"3A"},...]
-// removeGenders from student array function bich
+
+const addClassCodeToStudents = (arr, text) => {
+  let addedClassCodeToStudents = arr.map(() => {});
+  return addClassCodeToStudents;
+};
+let resultAddClassCodeToStudnets = addClassCodeToStudents(
+  data,
+  "classCode:'3A' "
+);
+console.log("addField=", resultAddClassCodeToStudnets);
+
+// removeGenders from student array function bich damn aa
