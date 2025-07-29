@@ -90,13 +90,31 @@ console.log("richStudents=", resultRichStudent);
 // eg: addClassCodeToStudents(students,"3A") => [{name: "boldo",age: 3,grade: 11,gender: "male",balance: 1231,classCode:"3A"},...]
 
 const addClassCodeToStudents = (arr, text) => {
-  let newData = arr.map((student) => {});
-  return;
+  let newData = arr.map((student) => {
+    return {
+      name: student.name,
+      age: student.age,
+      grade: student.grade,
+      gender: student.gender,
+      balance: student.balance,
+      classcode: text,
+    };
+  });
+  return newData;
 };
-let resultAddClassCodeToStudnets = addClassCodeToStudents(
-  data,
-  "classCode:'3A' "
-);
+let resultAddClassCodeToStudnets = addClassCodeToStudents(data, "3A");
 console.log("addField=", resultAddClassCodeToStudnets);
 
 // removeGenders from student array function bich .
+ 
+const removeGenders = (arr) => {
+  let newData = arr.map((student) => {
+    return {
+      name: student.name,
+      age: student.grade,
+      grade: student.grade,
+      balance: student.balance,
+      classcode:3A
+    }
+  })return newData
+}
