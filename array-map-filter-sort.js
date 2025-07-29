@@ -90,8 +90,8 @@ console.log("richStudents=", resultRichStudent);
 // eg: addClassCodeToStudents(students,"3A") => [{name: "boldo",age: 3,grade: 11,gender: "male",balance: 1231,classCode:"3A"},...]
 
 const addClassCodeToStudents = (arr, text) => {
-  let addedClassCodeToStudents = arr.map(() => {});
-  return addClassCodeToStudents;
+  let newData = arr.map((student) => {});
+  return;
 };
 let resultAddClassCodeToStudnets = addClassCodeToStudents(
   data,
@@ -99,4 +99,4 @@ let resultAddClassCodeToStudnets = addClassCodeToStudents(
 );
 console.log("addField=", resultAddClassCodeToStudnets);
 
-// removeGenders from student array function bich damn aa
+// removeGenders from student array function bich .
