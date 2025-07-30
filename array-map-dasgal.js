@@ -290,9 +290,9 @@ console.log("16", resultLowStockProducts);
 // }
 
 const getUniqueSuppliers = (products) => {
-  let uniqueSuppliers = [];
+  const uniqueSuppliers = [];
   products.forEach((product) => {
-    if (!product.supplier.includes(product.supplier)) {
+    if (!uniqueSuppliers.includes(product.supplier)) {
       uniqueSuppliers.push(product.supplier);
     }
   });
