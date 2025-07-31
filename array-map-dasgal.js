@@ -289,27 +289,68 @@ console.log("16", resultLowStockProducts);
 //   // ...
 // }
 
+// const getUniqueSuppliers = (products) => {
+//   const uniqueSuppliers = [];
+//   products.forEach((product) => {
+//     if (!uniqueSuppliers.includes(product.supplier)) {
+//       uniqueSuppliers.push(product.supplier);
+//     }
+//   });
+//   return uniqueSuppliers;
+// };
+// let resultUniqueSuppliers = getUniqueSuppliers(data);
+// console.log("17", resultUniqueSuppliers);
+
 const getUniqueSuppliers = (products) => {
-  const uniqueSuppliers = [];
-  products.forEach((product) => {
-    if (!uniqueSuppliers.includes(product.supplier)) {
-      uniqueSuppliers.push(product.supplier);
-    }
+  const suppliers = products.map((product) => {
+    return product.supplier;
   });
-  return uniqueSuppliers;
+  const uniqueSuppliers = {};
+  suppliers.forEach((supplier) => {
+    uniqueSuppliers[supplier] = true;
+  });
+  const keysOfUniqueSuppliers = Object.keys(uniqueSuppliers);
+  return keysOfUniqueSuppliers;
 };
 let resultUniqueSuppliers = getUniqueSuppliers(data);
 console.log("17", resultUniqueSuppliers);
+
 // // 18. Зөвхөн name ба price талбартай шинэ массив үүсгэдэг функц бич.
 // function getNameAndPriceList(products) {
 //   // ...
 // }
+
+const getNameAndPriceList = (products) => {
+  const nameAndPriceList = products.map((product) => {
+    return { name: product.name, price: product.price };
+  });
+  return nameAndPriceList;
+};
+let resultNameAndPriceList = getNameAndPriceList(data);
+console.log("18", resultNameAndPriceList);
 
 // // 19. Үнэлгээ нь 4.5-аас их бүх бүтээгдэхүүнүүдийг буцаадаг функц бич.
 // function getHighlyRatedProducts(products) {
 //   // ...
 // }
 
+const getHighlyRatedProducts = (products) => {
+  let highlyRatedProducts = products.filter((product) => {
+    return product.rating > 4.5;
+  });
+  return highlyRatedProducts;
+};
+let resultHighlyRatedProducts = getHighlyRatedProducts(data);
+console.log("19", resultHighlyRatedProducts);
 // // 20. Бүх бүтээгдэхүүнд `id` талбар нэмж өгдөг функц бич (жишээ нь 1, 2, 3...).
 // function addIdToProducts(products) {
 //   // ...
+
+const addIdToProducts = (products) => {
+  products.forEach((product, i) => {
+    product.id = i + 1;
+  });
+  return products;
+};
+let resultAddIdToProducts = addIdToProducts(data);
+console.log("20", resultAddIdToProducts);

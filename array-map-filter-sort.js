@@ -10,6 +10,13 @@ let mapAges = ages.map((age) => {
 });
 console.log("mapAges", mapAges);
 
+// mapAges [
+//   { value: 100 },
+//   { value: 2030 },
+//   { value: 400 },
+//   { value: 300 },
+//   { value: 500 }
+// ]
 let data = [
   { name: "boldo", age: 18, grade: 11, gender: "male", balance: 3000 },
   { name: "dorjo", age: 21, grade: 11, gender: "male", balance: 2000 },
@@ -91,30 +98,14 @@ console.log("richStudents=", resultRichStudent);
 
 const addClassCodeToStudents = (arr, text) => {
   let newData = arr.map((student) => {
-    return {
-      name: student.name,
-      age: student.age,
-      grade: student.grade,
-      gender: student.gender,
-      balance: student.balance,
-      classcode: text,
-    };
+    return { name: student.name, age };
   });
-  return newData;
+  return;
 };
-let resultAddClassCodeToStudnets = addClassCodeToStudents(data, "3A");
+let resultAddClassCodeToStudnets = addClassCodeToStudents(
+  data,
+  "classCode:'3A' "
+);
 console.log("addField=", resultAddClassCodeToStudnets);
 
 // removeGenders from student array function bich .
- 
-const removeGenders = (arr) => {
-  let newData = arr.map((student) => {
-    return {
-      name: student.name,
-      age: student.grade,
-      grade: student.grade,
-      balance: student.balance,
-      classcode:3A
-    }
-  })return newData
-}
